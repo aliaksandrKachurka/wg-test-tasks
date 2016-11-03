@@ -42,7 +42,7 @@ object Runner {
         (fileNumber, newFileLines)
     }
 
-    newFiles.foreach {
+    newFiles foreach {
       case (fileNumber, newFileLines) =>
         Ops.save(outputPath, fileNumber, newFileLines)
     }
