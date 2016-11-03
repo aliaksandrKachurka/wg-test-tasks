@@ -17,7 +17,7 @@ object Runner {
       .setAppName("HBase Test Task")
     val ssc = new StreamingContext(sparkConf, Seconds(5))
 
-    // Bad lines (i.e. not matching timestamp-value pairs format are simply dropped.
+    // Bad lines (i.e. not matching timestamp-value pairs) format are simply dropped.
     val statsStream = ssc
       .socketTextStream(host, port)
       .map(StatsCSVParser.parse)
